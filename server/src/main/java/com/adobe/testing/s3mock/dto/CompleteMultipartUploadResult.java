@@ -16,28 +16,29 @@
 
 package com.adobe.testing.s3mock.dto;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 /**
  * Result to be returned when completing a multipart request.
  */
-@XStreamAlias("CompleteMultipartUploadResult")
+@JsonRootName("CompleteMultipartUploadResult")
 public class CompleteMultipartUploadResult {
-  @XStreamAlias("Location")
+  @JsonProperty("Location")
   private final String location;
 
-  @XStreamAlias("Bucket")
+  @JsonProperty("Bucket")
   private final String bucket;
 
-  @XStreamAlias("Key")
+  @JsonProperty("Key")
   private final String key;
 
-  @XStreamAlias("ETag")
+  @JsonProperty("ETag")
   private final String etag;
 
   /**
    * Constructs a new {@link CompleteMultipartUploadResult}.
-   * 
+   *
    * @param location s3 url.
    * @param bucket bucket name
    * @param key filename

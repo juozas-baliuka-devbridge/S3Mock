@@ -18,20 +18,19 @@ package com.adobe.testing.s3mock.dto;
 
 import com.adobe.testing.s3mock.domain.Bucket;
 import com.adobe.testing.s3mock.domain.Buckets;
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import java.util.List;
 
 /**
  * Represents a result of listing all Buckets.
  */
-@XStreamAlias("ListAllMyBucketsResult")
-@XStreamInclude({Buckets.class})
+@JsonRootName("ListAllMyBucketsResult")
 public class ListAllMyBucketsResult {
-  @XStreamAlias("Owner")
+  @JsonProperty("Owner")
   private Owner owner;
 
-  @XStreamAlias("Buckets")
+  @JsonProperty("Buckets")
   private Buckets buckets;
 
   /**
