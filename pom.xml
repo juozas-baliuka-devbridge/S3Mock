@@ -48,14 +48,13 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <start-class>com.adobe.testing.s3mock.S3MockApplication</start-class>
 
     <zulu-openjdk-alpine.version>10.3-10.0.2</zulu-openjdk-alpine.version>
     <alpine-glibc.version>alpine-3.8_glibc-2.28</alpine-glibc.version>
 
     <aws.version>1.11.310</aws.version>
 
-    <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
+    <spring-boot.version>2.1.0.M4</spring-boot.version>
     <spring-security-oauth2.version>2.0.8.RELEASE</spring-security-oauth2.version>
     <commons-codec.version>1.11</commons-codec.version>
     <xstream.version>1.4.10</xstream.version>
@@ -69,6 +68,19 @@
     <license-maven-plugin-git.version>3.0</license-maven-plugin-git.version>
     <checkstyle.version>8.10</checkstyle.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>spring-milestones</id>
+      <url>https://repo.spring.io/milestone/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>spring-milestones</id>
+      <url>https://repo.spring.io/milestone/</url>
+    </pluginRepository>
+  </pluginRepositories>
 
   <modules>
     <module>server</module>

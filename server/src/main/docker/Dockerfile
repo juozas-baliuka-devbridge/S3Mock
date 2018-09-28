@@ -52,4 +52,4 @@ EXPOSE 9090 9191
 
 COPY maven /opt/
 
-ENTRYPOINT java -Xmx128m -Djava.security.egd=file:/dev/./urandom -jar /opt/service/*.jar
+ENTRYPOINT java -Xmx128m --illegal-access=warn -Djava.security.egd=file:/dev/./urandom -jar /opt/service/*.jar
