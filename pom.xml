@@ -54,7 +54,7 @@
 
     <aws.version>1.11.310</aws.version>
 
-    <spring-boot.version>2.1.0.M4</spring-boot.version>
+    <spring-boot.version>2.1.0.RC1</spring-boot.version>
     <spring-security-oauth2.version>2.0.8.RELEASE</spring-security-oauth2.version>
     <commons-codec.version>1.11</commons-codec.version>
     <commons-io.version>2.6</commons-io.version>
