@@ -14,7 +14,7 @@
 #  limitations under the License.
 #
 
-FROM azul/zulu-openjdk-alpine:${zulu-openjdk-alpine.version} as staging_area
+FROM adoptopenjdk/openjdk11:${adoptopenjdk11.image.version} as staging_area
 
 # create a minimal jdk assembly with those modules that we need
 RUN jlink \
@@ -34,7 +34,7 @@ RUN mkdir -p /target/usr/glibc-compat/lib; \
 #
 # build the actual image
 #
-FROM frolvlad/alpine-glibc:${alpine-glibc.version}
+FROM frolvlad/alpine-glibc:${alpine-glibc.image.version}
 
 # copy files prepared in the other container
 COPY --from=staging_area /target /
@@ -52,4 +52,4 @@ EXPOSE 9090 9191
 
 COPY maven /opt/
 
-ENTRYPOINT java -Xmx128m --illegal-access=warn -Djava.security.egd=file:/dev/./urandom -jar /opt/service/*.jar
+ENTRYPOINT java -XX:+UseContainerSupport -Xmx128m --illegal-access=warn -Djava.security.egd=file:/dev/./urandom -jar /opt/service/*.jar
